@@ -1,5 +1,6 @@
-import requests
 import uuid
+
+import requests
 
 
 def appconfig():
@@ -10,24 +11,18 @@ def appconfig():
         response = requests.post(
             url="https://mcare.siriusxm.ca/authService/100000002/appconfig",
             headers={
-                "X-Kony-Integrity":
-                "GWSUSEVMJK;FEC9AA232EC59BE8A39F0FAE1B71300216E906B85F40CA2B1C5C7A59F85B17A4",
+                "X-Kony-Integrity": "GWSUSEVMJK;FEC9AA232EC59BE8A39F0FAE1B71300216E906B85F40CA2B1C5C7A59F85B17A4",
                 "X-HTTP-Method-Override": "GET",
                 "X-Kony-App-Key": "85ee60a3c8f011baaeba01ff3a5ae2c9",
                 "Accept": "*/*",
                 "X-Kony-App-Secret": "e3048b73f2f7a6c069f7d8abf5864115",
                 "Accept-Language": "en-us",
                 "Accept-Encoding": "br, gzip, deflate",
-                "User-Agent":
-                "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
+                "User-Agent": "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
             },
         )
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
-        #print('Response HTTP Response Body: {content}'.format(
-        #    content=response.content))
     except requests.exceptions.RequestException:
-        print('HTTP Request failed')
+        print("HTTP Request failed")
 
 
 def login():
@@ -45,19 +40,14 @@ def login():
                 "X-Kony-SDK-Type": "js",
                 "Accept-Encoding": "br, gzip, deflate",
                 "Content-Type": "application/x-www-form-urlencoded",
-                "User-Agent":
-                "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
+                "User-Agent": "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
                 "X-Kony-SDK-Version": "8.4.134",
                 "X-Kony-App-Key": "85ee60a3c8f011baaeba01ff3a5ae2c9",
             },
         )
-        return response.json().get('claims_token').get('value')
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
-        #print('Response HTTP Response Body: {content}'.format(
-        #    content=response.content))
+        return response.json().get("claims_token").get("value")
     except requests.exceptions.RequestException:
-        print('HTTP Request failed')
+        print("HTTP Request failed")
 
 
 def versionControl():
@@ -66,8 +56,7 @@ def versionControl():
 
     try:
         response = requests.post(
-            url=
-            "https://mcare.siriusxm.ca/services/DealerAppService7/VersionControl",
+            url="https://mcare.siriusxm.ca/services/DealerAppService7/VersionControl",
             headers={
                 "Accept": "*/*",
                 "X-Kony-API-Version": "1.0",
@@ -75,8 +64,7 @@ def versionControl():
                 "Accept-Language": "en-us",
                 "Accept-Encoding": "br, gzip, deflate",
                 "Content-Type": "application/x-www-form-urlencoded",
-                "User-Agent":
-                "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
+                "User-Agent": "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
                 "X-Kony-Authorization": auth_token,
             },
             data={
@@ -88,12 +76,8 @@ def versionControl():
                 "deviceType": "",
             },
         )
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
-        #print('Response HTTP Response Body: {content}'.format(
-        #    content=response.content))
     except requests.exceptions.RequestException:
-        print('HTTP Request failed')
+        print("HTTP Request failed")
 
 
 def getProperties():
@@ -102,8 +86,7 @@ def getProperties():
 
     try:
         response = requests.post(
-            url=
-            "https://mcare.siriusxm.ca/services/DealerAppService7/getProperties",
+            url="https://mcare.siriusxm.ca/services/DealerAppService7/getProperties",
             headers={
                 "Accept": "*/*",
                 "X-Kony-API-Version": "1.0",
@@ -111,17 +94,12 @@ def getProperties():
                 "Accept-Language": "en-us",
                 "Accept-Encoding": "br, gzip, deflate",
                 "Content-Type": "application/x-www-form-urlencoded",
-                "User-Agent":
-                "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
+                "User-Agent": "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
                 "X-Kony-Authorization": auth_token,
             },
         )
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
-        #print('Response HTTP Response Body: {content}'.format(
-        #    content=response.content))
     except requests.exceptions.RequestException:
-        print('HTTP Request failed')
+        print("HTTP Request failed")
 
 
 def update_1():
@@ -130,8 +108,7 @@ def update_1():
 
     try:
         response = requests.post(
-            url=
-            "https://mcare.siriusxm.ca/services/USUpdateDeviceSATRefresh/updateDeviceSATRefreshWithPriority",
+            url="https://mcare.siriusxm.ca/services/USUpdateDeviceSATRefresh/updateDeviceSATRefreshWithPriority",
             headers={
                 "Accept": "*/*",
                 "X-Kony-API-Version": "1.0",
@@ -139,8 +116,7 @@ def update_1():
                 "Accept-Language": "en-us",
                 "Accept-Encoding": "br, gzip, deflate",
                 "Content-Type": "application/x-www-form-urlencoded",
-                "User-Agent":
-                "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
+                "User-Agent": "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
                 "X-Kony-Authorization": auth_token,
             },
             data={
@@ -153,13 +129,10 @@ def update_1():
                 "lat": "32.37436705",
             },
         )
-        return response.json().get('seqValue')
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
-        print('Response HTTP Response Body: {content}'.format(
-            content=response.content))
+        return response.json().get("seqValue")
+        print("Response HTTP Response Body: {content}".format(content=response.content))
     except requests.exceptions.RequestException:
-        print('HTTP Request failed')
+        print("HTTP Request failed")
 
 
 def getCRM():
@@ -168,8 +141,7 @@ def getCRM():
 
     try:
         response = requests.post(
-            url=
-            "https://mcare.siriusxm.ca/services/DemoConsumptionRules/GetCRMAccountPlanInformation",
+            url="https://mcare.siriusxm.ca/services/DemoConsumptionRules/GetCRMAccountPlanInformation",
             headers={
                 "Accept": "*/*",
                 "X-Kony-API-Version": "1.0",
@@ -177,8 +149,7 @@ def getCRM():
                 "Accept-Language": "en-us",
                 "Accept-Encoding": "br, gzip, deflate",
                 "Content-Type": "application/x-www-form-urlencoded",
-                "User-Agent":
-                "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
+                "User-Agent": "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
                 "X-Kony-Authorization": auth_token,
             },
             data={
@@ -186,12 +157,9 @@ def getCRM():
                 "deviceId": radio_id_input,
             },
         )
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
-        print('Response HTTP Response Body: {content}'.format(
-            content=response.content))
+        print("Response HTTP Response Body: {content}".format(content=response.content))
     except requests.exceptions.RequestException:
-        print('HTTP Request failed')
+        print("HTTP Request failed")
 
 
 def dbUpdate():
@@ -200,8 +168,7 @@ def dbUpdate():
 
     try:
         response = requests.post(
-            url=
-            "https://mcare.siriusxm.ca/services/DBSuccessUpdate/DBUpdateForGoogle",
+            url="https://mcare.siriusxm.ca/services/DBSuccessUpdate/DBUpdateForGoogle",
             headers={
                 "Accept": "*/*",
                 "X-Kony-API-Version": "1.0",
@@ -209,8 +176,7 @@ def dbUpdate():
                 "Accept-Language": "en-us",
                 "Accept-Encoding": "br, gzip, deflate",
                 "Content-Type": "application/x-www-form-urlencoded",
-                "User-Agent":
-                "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
+                "User-Agent": "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
                 "X-Kony-Authorization": auth_token,
             },
             data={
@@ -226,12 +192,9 @@ def dbUpdate():
                 "seqVal": seq,
             },
         )
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
-        print('Response HTTP Response Body: {content}'.format(
-            content=response.content))
+        print("Response HTTP Response Body: {content}".format(content=response.content))
     except requests.exceptions.RequestException:
-        print('HTTP Request failed')
+        print("HTTP Request failed")
 
 
 def blocklist():
@@ -240,8 +203,7 @@ def blocklist():
 
     try:
         response = requests.post(
-            url=
-            "https://mcare.siriusxm.ca/services/USBlockListDevice/BlockListDevice",
+            url="https://mcare.siriusxm.ca/services/USBlockListDevice/BlockListDevice",
             headers={
                 "Accept": "*/*",
                 "X-Kony-API-Version": "1.0",
@@ -249,20 +211,16 @@ def blocklist():
                 "Accept-Language": "en-us",
                 "Accept-Encoding": "br, gzip, deflate",
                 "Content-Type": "application/x-www-form-urlencoded",
-                "User-Agent":
-                "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
+                "User-Agent": "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
                 "X-Kony-Authorization": auth_token,
             },
             data={
                 "deviceId": uuid4,
             },
         )
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
-        print('Response HTTP Response Body: {content}'.format(
-            content=response.content))
+        print("Response HTTP Response Body: {content}".format(content=response.content))
     except requests.exceptions.RequestException:
-        print('HTTP Request failed')
+        print("HTTP Request failed")
 
 
 def oracle():
@@ -271,26 +229,21 @@ def oracle():
 
     try:
         response = requests.post(
-            url=
-            "https://oemremarketing.custhelp.com/cgi-bin/oemremarketing.cfg/php/custom/src/oracle/program_status.php",
+            url="https://oemremarketing.custhelp.com/cgi-bin/oemremarketing.cfg/php/custom/src/oracle/program_status.php",
             params={
                 "google_addr": "395 EASTERN BLVD, MONTGOMERY, AL 36117, USA",
             },
             headers={
                 "Content-Type": "application/x-www-form-urlencoded",
                 "Accept": "*/*",
-                "User-Agent":
-                "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
+                "User-Agent": "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
                 "Accept-Language": "en-us",
                 "Accept-Encoding": "br, gzip, deflate",
             },
         )
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
-        print('Response HTTP Response Body: {content}'.format(
-            content=response.content))
+        print("Response HTTP Response Body: {content}".format(content=response.content))
     except requests.exceptions.RequestException:
-        print('HTTP Request failed')
+        print("HTTP Request failed")
 
 
 def createAccount():
@@ -299,8 +252,7 @@ def createAccount():
 
     try:
         response = requests.post(
-            url=
-            "https://mcare.siriusxm.ca/services/DealerAppService3/CreateAccount",
+            url="https://mcare.siriusxm.ca/services/DealerAppService3/CreateAccount",
             headers={
                 "Accept": "*/*",
                 "X-Kony-API-Version": "1.0",
@@ -308,8 +260,7 @@ def createAccount():
                 "Accept-Language": "en-us",
                 "Accept-Encoding": "br, gzip, deflate",
                 "Content-Type": "application/x-www-form-urlencoded",
-                "User-Agent":
-                "SXM Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
+                "User-Agent": "SXM Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
                 "X-Kony-Authorization": auth_token,
             },
             data={
@@ -319,12 +270,9 @@ def createAccount():
                 "appVersion": "2.7.0",
             },
         )
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
-        print('Response HTTP Response Body: {content}'.format(
-            content=response.content))
+        print("Response HTTP Response Body: {content}".format(content=response.content))
     except requests.exceptions.RequestException:
-        print('HTTP Request failed')
+        print("HTTP Request failed")
 
 
 def update_2():
@@ -333,8 +281,7 @@ def update_2():
 
     try:
         response = requests.post(
-            url=
-            "https://mcare.siriusxm.ca/services/USUpdateDeviceRefreshForCC/updateDeviceSATRefreshWithPriority",
+            url="https://mcare.siriusxm.ca/services/USUpdateDeviceRefreshForCC/updateDeviceSATRefreshWithPriority",
             headers={
                 "Accept": "*/*",
                 "X-Kony-API-Version": "1.0",
@@ -342,8 +289,7 @@ def update_2():
                 "Accept-Language": "en-us",
                 "Accept-Encoding": "br, gzip, deflate",
                 "Content-Type": "application/x-www-form-urlencoded",
-                "User-Agent":
-                "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
+                "User-Agent": "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
                 "X-Kony-Authorization": auth_token,
             },
             data={
@@ -356,12 +302,9 @@ def update_2():
                 "provisionType": "activate",
             },
         )
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
-        print('Response HTTP Response Body: {content}'.format(
-            content=response.content))
+        print("Response HTTP Response Body: {content}".format(content=response.content))
     except requests.exceptions.RequestException:
-        print('HTTP Request failed')
+        print("HTTP Request failed")
 
 
 requests = requests.Session()
