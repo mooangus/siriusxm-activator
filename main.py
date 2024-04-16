@@ -130,7 +130,6 @@ def update_1():
             },
         )
         return response.json().get("seqValue")
-        print("Response HTTP Response Body: {content}".format(content=response.content))
     except requests.exceptions.RequestException:
         print("HTTP Request failed")
 
