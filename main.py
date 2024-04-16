@@ -22,10 +22,6 @@ def appconfig():
                 "SXM%20Dealer/2.7.0 CFNetwork/978.0.7 Darwin/18.7.0",
             },
         )
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
-        #print('Response HTTP Response Body: {content}'.format(
-        #    content=response.content))
     except requests.exceptions.RequestException:
         print('HTTP Request failed')
 
@@ -52,10 +48,6 @@ def login():
             },
         )
         return response.json().get('claims_token').get('value')
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
-        #print('Response HTTP Response Body: {content}'.format(
-        #    content=response.content))
     except requests.exceptions.RequestException:
         print('HTTP Request failed')
 
@@ -88,10 +80,6 @@ def versionControl():
                 "deviceType": "",
             },
         )
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
-        #print('Response HTTP Response Body: {content}'.format(
-        #    content=response.content))
     except requests.exceptions.RequestException:
         print('HTTP Request failed')
 
@@ -116,10 +104,6 @@ def getProperties():
                 "X-Kony-Authorization": auth_token,
             },
         )
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
-        #print('Response HTTP Response Body: {content}'.format(
-        #    content=response.content))
     except requests.exceptions.RequestException:
         print('HTTP Request failed')
 
@@ -154,8 +138,6 @@ def update_1():
             },
         )
         return response.json().get('seqValue')
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
         print('Response HTTP Response Body: {content}'.format(
             content=response.content))
     except requests.exceptions.RequestException:
@@ -186,8 +168,6 @@ def getCRM():
                 "deviceId": radio_id_input,
             },
         )
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
         print('Response HTTP Response Body: {content}'.format(
             content=response.content))
     except requests.exceptions.RequestException:
@@ -226,8 +206,6 @@ def dbUpdate():
                 "seqVal": seq,
             },
         )
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
         print('Response HTTP Response Body: {content}'.format(
             content=response.content))
     except requests.exceptions.RequestException:
@@ -257,8 +235,6 @@ def blocklist():
                 "deviceId": uuid4,
             },
         )
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
         print('Response HTTP Response Body: {content}'.format(
             content=response.content))
     except requests.exceptions.RequestException:
@@ -285,8 +261,6 @@ def oracle():
                 "Accept-Encoding": "br, gzip, deflate",
             },
         )
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
         print('Response HTTP Response Body: {content}'.format(
             content=response.content))
     except requests.exceptions.RequestException:
@@ -319,8 +293,6 @@ def createAccount():
                 "appVersion": "2.7.0",
             },
         )
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
         print('Response HTTP Response Body: {content}'.format(
             content=response.content))
     except requests.exceptions.RequestException:
@@ -356,8 +328,6 @@ def update_2():
                 "provisionType": "activate",
             },
         )
-        #print('Response HTTP Status Code: {status_code}'.format(
-        #    status_code=response.status_code))
         print('Response HTTP Response Body: {content}'.format(
             content=response.content))
     except requests.exceptions.RequestException:
